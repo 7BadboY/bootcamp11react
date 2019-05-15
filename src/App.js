@@ -5,6 +5,8 @@ import Form from './components/Form/Form';
 import style from './App.css';
 import UserCard from './components/UserCard(hw1)/UserCard';
 import StatisticSection from './components/StatisticSection(hm2)/StatisticSection';
+import PricingPlan from './components/PricingPlan(hw3)/PricingPlan';
+import PricingItems from './components/PricingPlan(hw3)/pricing-plan';
 
 const user = {
   name: 'Jacques Gluke',
@@ -92,6 +94,7 @@ class App extends Component {
         </ul>
         <UserCard {...user} />
         <StatisticSection stats={stats} />
+        <PricingPlan plan={PricingItems} />
       </>
     );
   }
