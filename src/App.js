@@ -7,6 +7,8 @@ import UserCard from './components/UserCard(hw1)/UserCard';
 import StatisticSection from './components/StatisticSection(hm2)/StatisticSection';
 import PricingPlan from './components/PricingPlan(hw3)/PricingPlan';
 import PricingItems from './components/PricingPlan(hw3)/pricing-plan';
+import transactions from './components/TransactionHistory(hw4)/transactions';
+import TransactionHistory from './components/TransactionHistory(hw4)/TransactionHistory';
 
 const user = {
   name: 'Jacques Gluke',
@@ -95,6 +97,7 @@ class App extends Component {
         <UserCard {...user} />
         <StatisticSection stats={stats} />
         <PricingPlan plan={PricingItems} />
+        <TransactionHistory transactions={transactions} />
       </>
     );
   }
