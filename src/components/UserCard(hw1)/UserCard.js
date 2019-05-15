@@ -1,20 +1,14 @@
 import React from 'react';
 import styles from './UserCard.module.css';
 
-
-
 const UserCard = ({ name, tag, location, avatar, stats }) => (
   <div className={styles.profile}>
-    < div className="description" >
-      <img
-        src={avatar}
-        alt="user avatar"
-        className="avatar"
-      />
+    <div className="description">
+      <img src={avatar} alt="user avatar" className="avatar" />
       <p className="name">{name}</p>
       <p className="tag">{tag}</p>
       <p className="location">{location}</p>
-    </div >
+    </div>
 
     <ul className="stats">
       <li ClassName="stats__item">
@@ -30,6 +24,6 @@ const UserCard = ({ name, tag, location, avatar, stats }) => (
         <span className="quantity">{stats.likes}</span>
       </li>
     </ul>
-  </div >
-)
+  </div>
+);
 export default UserCard;

@@ -9,7 +9,7 @@ const Counter = ({ count, onDecrement, onIncrement }) => (
     <span>{count}</span>
     <button onClick={onIncrement} className={styles.btn}>+</button>
   </div>
-)
+);
 
 Counter.propTypes = {
   count: PropTypes.number,

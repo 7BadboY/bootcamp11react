@@ -1,15 +1,13 @@
 {
   "extends": [
-    "eslint:recommended",
     "airbnb",
-    "plugin:import/errors",
-    "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended",
     "prettier",
     "plugin:prettier/recommended",
     "prettier/react"
   ],
-  "plugins": ["react", "import", "prettier", "jsx-a11y"],
+  "plugins": [
+    "prettier"
+  ],
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 2018,
@@ -26,10 +24,19 @@
   },
   "rules": {
     "no-console": 1,
-    "linebreak-style": ["error", "unix"],
-    "react/jsx-filename-extension": [1, {
-      "extensions": [".js", ".jsx"]
-    }],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
     "react/destructuring-assignment": [
       2,
       "always",

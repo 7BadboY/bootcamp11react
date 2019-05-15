@@ -3,8 +3,8 @@ import Header from './components/Header/Header';
 import Counter from './components/Counter/Counter';
 import Form from './components/Form/Form';
 import style from './App.css';
-import UserCard from './components/UserCard/UserCard';
-import StatisticSection from './components/StatisticSection/StatisticSection';
+import UserCard from './components/UserCard(hw1)/UserCard';
+import StatisticSection from './components/StatisticSection(hm2)/StatisticSection';
 
 const user = {
   name: 'Jacques Gluke',
@@ -43,9 +43,9 @@ class App extends Component {
     this.setState(prevState => {
       return {
         count: prevState.count + 1,
-      }
+      };
     });
-  }
+  };
 
   onDecrement = () => {
     if (this.state.count > 0)
@@ -55,11 +55,11 @@ class App extends Component {
       this.setState(prevState => {
         return {
           count: prevState.count - 1,
-        }
+        };
       });
-  }
+  };
 
-  onSubmit = (data) => {
+  onSubmit = data => {
     const { users } = this.state;
     const newUsers = [...users];
     const userData = data;
@@ -68,16 +68,18 @@ class App extends Component {
 
     this.setState({
       users: newUsers,
-    })
-  }
+    });
+  };
 
   render() {
     const { logoTitle, count, users } = this.state;
 
     return (
       <>
-        <Header logoTitle={logoTitle} logged='true' />
-        <div className='main__container'><h1 className='main__title'>My React</h1></div>
+        <Header logoTitle={logoTitle} logged="true" />
+        <div className={style.main__container}>
+          <h1 className="main__title">My React</h1>
+        </div>
         <Counter
           onDecrement={this.onDecrement}
           onIncrement={this.onIncrement}
@@ -85,8 +87,8 @@ class App extends Component {
         />
         <Form onSubmit={this.onSubmit} />
         <ul>
-          {users.length > 0 && users.map(user => <UserCard key={user.id} {...user} />
-          )}
+          {users.length > 0 &&
+            users.map(user => <UserCard key={user.id} {...user} />)}
         </ul>
         <UserCard {...user} />
         <StatisticSection stats={stats} />
