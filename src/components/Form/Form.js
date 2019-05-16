@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import styles from './Form.module.css';
+
 
 class Form extends Component {
   constructor() {
@@ -8,52 +10,54 @@ class Form extends Component {
       name: '',
       email: '',
       country: '',
-    }
+    };
   }
 
-  onHandleInput = (e) => {
+  onHandleInput = e => {
     const { name, value } = e.target;
     this.setState({
-      [name]: value
+      [name]: value,
     });
-  }
+  };
 
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     const { name, email, country } = this.state;
     e.preventDefault();
 
     this.props.onSubmit({ name, email, country });
-  }
+  };
 
   render() {
     return (
-      <form action='' onSubmit={this.handleSubmit}>
+      <form action="" onSubmit={this.handleSubmit} className={styles.form}>
         <input
-          placeholder='name'
+          placeholder="name"
           onChange={this.onHandleInput}
-          type='text'
-          name='name'>
-        </input>
+          type="text"
+          name="name"
+        />
         <input
-          placeholder='email'
+          placeholder="email"
           onChange={this.onHandleInput}
-          type='email'
-          name='email'>
-        </input>
+          type="email"
+          name="email"
+        />
         <input
-          placeholder='country'
+          placeholder="country"
           onChange={this.onHandleInput}
-          type='text'
-          name='country'>
-        </input>
-        <button type='submit'>submit</button>
+          type="text"
+          name="country"
+        />
+        <button className={styles.button} type="submit" >
+          submit
+        </button>
       </form>
-    )
+    );
   }
 }
 
 Form.propTypes = {
   onSubmit: PropTypes.func,
-}
+};
 
 export default Form;

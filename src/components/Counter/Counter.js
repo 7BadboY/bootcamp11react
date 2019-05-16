@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 
 const Counter = ({ count, onDecrement, onIncrement }) => (
-  <div>
+  <div className={styles.mainContainer}>
     <button onClick={onDecrement} className={styles.btn}>-</button>
     <span>{count}</span>
     <button onClick={onIncrement} className={styles.btn}>+</button>
