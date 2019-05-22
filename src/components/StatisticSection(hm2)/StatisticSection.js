@@ -1,31 +1,29 @@
 import React from 'react';
+import styles from './StatisticSection.module.css';
+import PropTypes from 'prop-types';
 
-const StatisticSection = ({ stats }) => (
-  <section className="stats-section">
-    <h2 className="title">Upload stats</h2>
+const StatisticSection = ({ title, stats }) => (
+  <section className={styles.section}>
+    <h2 className={styles.title}>{title}</h2>
 
-    <ul className="stat-list">
+    <ul className={styles.list}>
       {stats.map(el => (
-        <li className="item">
-          <span className="label">{el.label}</span>
-          <span className="percentage">{el.percentage}%</span>
+        <li key={el.id} className={styles.item}>
+          <span className={styles.label}>{el.label}</span>
+          <span className={styles.percentage}>{el.percentage}%</span>
         </li>
       ))}
-      ;
-      {/* <li className="item">
-        <span className="label">.mp3</span>
-        <span className="percentage">14%</span>
-      </li>
-      <li className="item">
-        <span className="label">.pdf</span>
-        <span className="percentage">41%</span>
-      </li>
-      <li className="item">
-        <span className="label">.mp4</span>
-        <span className="percentage">12%</span>
-      </li> */}
     </ul>
   </section>
 );
+
+StatisticSection.propTypes = {
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(PropTypes.shape).isRequired
+};
+
+StatisticSection.defaultProps = {
+  title: 'Upload stats',
+};
 
 export default StatisticSection;
